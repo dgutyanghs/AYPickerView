@@ -45,6 +45,11 @@
 {
     HLPersonCellView *cellView = [HLPersonCellView viewWithFrame:frame Name:@"Age" unit:@"Year" valueRangeFromMin:@0 toMax:@100 defaultValue:@25 andOwner:self   type:HLPersonCellViewEnumAge];
     self.ageCellView.tag = HLPersonCellViewEnumAge;
+    cellView.scaleBackgroundColor = [UIColor yellowColor];
+    cellView.scaleColor = [UIColor blueColor];
+    cellView.scaleBorderWidth = 5.0;
+    cellView.scaleCursorColor = [UIColor redColor];
+    cellView.resultTextColor = [UIColor magentaColor];
     
     return cellView;
 }

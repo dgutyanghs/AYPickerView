@@ -16,5 +16,6 @@
 
 
 +(instancetype)viewWithFrame:(CGRect)frame itemName:(NSString *)name Unit:(NSString *)unit andValue:(NSNumber *)value;
++(instancetype)viewWithFrame:(CGRect)frame itemName:(NSString *)name Unit:(NSString *)unit andValue:(NSNumber *)value andTextColor:(UIColor *)textColor;
 
 @end

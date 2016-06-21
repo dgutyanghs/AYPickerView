@@ -16,11 +16,12 @@
 @interface HLMeasureView ()
 @property (nonatomic, strong) NSMutableArray *labels;
 @property (nonatomic, assign) NSInteger startPosition;
+@property (nonatomic , strong, readonly) UIColor *valueColor;
 @end
 
 @implementation HLMeasureView
 
-+(instancetype)viewWithFrame:(CGRect)frame valueRangeFrom:(NSNumber *)min toMax:(NSNumber *)max andStartPosition:(CGFloat)startPosition
++(instancetype)viewWithFrame:(CGRect)frame valueRangeFrom:(NSNumber *)min toMax:(NSNumber *)max andStartPosition:(CGFloat)startPosition valueLabelColor:(UIColor *)color;
 {
     CGRect viewFrame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width + startPosition, frame.size.height);
     HLMeasureView * measureView = [[HLMeasureView alloc] initWithFrame:viewFrame];
@@ -31,7 +32,7 @@
     UInt8 count = ([max intValue]- [min intValue])/10;
     for (int i =0; i <= count; i++) {
         titleLabel = [[UILabel alloc] init];
-        titleLabel.textColor = [UIColor grayColor];
+        titleLabel.textColor = color;
         titleLabel.font = [UIFont systemFontOfSize:17.0];
         titleLabel.text = [NSString stringWithFormat:@"%d",[min intValue] + 10*i];
         
@@ -39,7 +40,7 @@
         [measureView addSubview:titleLabel];
     }
 
-
+    measureView->_valueColor = color;
     return measureView;
 }
 
@@ -89,7 +90,8 @@
     // 设置绘图状态
     // 设置线宽
     CGContextSetLineWidth(ctx, 1);
-    [[UIColor grayColor] set];
+//    [[UIColor grayColor] set];
+    [self.valueColor set];
     
     // 4.渲染上下文到视图
     CGContextStrokePath(ctx);

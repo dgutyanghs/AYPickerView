@@ -15,9 +15,10 @@
 @property (weak, nonatomic) HLPickerScrollView *valueScrollView;
 @property (weak, nonatomic) HLPersonItemInfoView *leftView;
 @property (weak, nonatomic) UIImageView *borderView;
-@property (strong, nonatomic)NSNumber *defaultValue;
+//@property (strong, nonatomic)NSNumber *defaultValue;
 @property (assign, nonatomic)CGFloat defaultOffSetX;
 
+@property (nonatomic , assign)id < UIScrollViewDelegate> owner;
 @end
 
 @implementation HLPersonCellView
@@ -33,35 +34,65 @@
 }
 
 
+-(void)setDefaultParameter {
+    _scaleColor = [UIColor grayColor];
+    _scaleBackgroundColor = [UIColor whiteColor];
+    _scaleBorderColor = [UIColor greenColor];
+    _scaleCursorColor = _scaleBorderColor;
+    _scaleBorderWidth = 3.0;
+    _resultTextColor  = [UIColor whiteColor];
+    
+}
+
+-(instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self setDefaultParameter];
+    }
+    
+    return self;
+}
+
 +(instancetype)viewWithFrame:(CGRect)frame Name:(NSString *)name unit:(NSString *)unitStr valueRangeFromMin:(NSNumber *)min toMax:(NSNumber *)max defaultValue:(NSNumber *)defaultValue andOwner:(id<UIScrollViewDelegate>)owner type:(HLPersonCellViewEnum)type
 {
     HLPersonCellView *cellView = [[HLPersonCellView alloc] initWithFrame:frame];
+    cellView.name = name;
+    cellView.unitStr = unitStr;
+    cellView.min = min;
+    cellView.max = max;
+    cellView.defaultValue = defaultValue;
+    cellView.owner = owner;
+    cellView.type = type;
     
+    return cellView;
+}
+
+-(void)layoutSubviews {
+    [super layoutSubviews];
     CGFloat leftViewX = 0;
     CGFloat leftViewY = 0;
     CGFloat leftViewW = 109/2;
     CGFloat leftViewH = 110/2;
     CGFloat padding = 10;
     UInt16 centerDistance = 10;
-    HLPersonItemInfoView *leftView = [HLPersonItemInfoView viewWithFrame:CGRectMake(leftViewX, leftViewY, leftViewW- padding, leftViewH) itemName:name Unit:unitStr andValue:defaultValue];
-    [cellView addSubview:leftView];
-    cellView.leftView = leftView;
+    HLPersonItemInfoView *leftView = [HLPersonItemInfoView viewWithFrame:CGRectMake(leftViewX, leftViewY, leftViewW- padding, leftViewH) itemName:_name Unit:_unitStr andValue:_defaultValue andTextColor:_resultTextColor];
+    [self addSubview:leftView];
+    self.leftView = leftView;
     
     //尺子scrollView
     CGFloat valueW = ScreenWidth - leftViewX - leftViewW  - 47/2 ;
-    HLPickerScrollView *valueScrollView = [HLPickerScrollView viewWithFrame:CGRectMake(leftViewW, 0, valueW, leftViewH) valueDefault:defaultValue RangeFrom:min toMax:max];
-    valueScrollView.backgroundColor = [UIColor whiteColor];
-    valueScrollView.layer.borderColor = [[UIColor greenColor] CGColor];
-    valueScrollView.layer.borderWidth = 3.0;
+    HLPickerScrollView *valueScrollView = [HLPickerScrollView viewWithFrame:CGRectMake(leftViewW, 0, valueW, leftViewH) valueDefault:_defaultValue RangeFrom:_min toMax:_max];
+    valueScrollView.scaleColor = _scaleColor;
+    valueScrollView.backgroundColor = _scaleBackgroundColor;
+    valueScrollView.layer.borderColor = [_scaleBorderColor CGColor];
+    valueScrollView.layer.borderWidth = _scaleBorderWidth;
     
-    NSInteger offsetX = ([defaultValue intValue] - 1 - centerDistance) * 10;
-    cellView.defaultOffSetX = offsetX;
-    cellView.defaultValue = defaultValue;
+    NSInteger offsetX = ([_defaultValue intValue] - 1 - centerDistance) * 10;
+    self.defaultOffSetX = offsetX;
     valueScrollView.contentOffset = CGPointMake(offsetX, 0);
-    valueScrollView.delegate = owner;
-    valueScrollView.tag = type;
-    [cellView addSubview:valueScrollView];
-    cellView.valueScrollView = valueScrollView;
+    valueScrollView.delegate = _owner;
+    valueScrollView.tag = _type;
+    [self addSubview:valueScrollView];
+    self.valueScrollView = valueScrollView;
     
     //游标指示框
     CGFloat cursorW = 8.0;
@@ -74,12 +105,9 @@
     [path closePath];
     
     CAShapeLayer *slayer = [[CAShapeLayer alloc] init];
-    slayer.fillColor = [UIColor greenColor].CGColor;
+    slayer.fillColor = _scaleCursorColor.CGColor;
     slayer.path = path.CGPath;
-    [cellView.layer addSublayer:slayer];
-    
-    return cellView;
+    [self.layer addSublayer:slayer];
 }
-
 
 @end

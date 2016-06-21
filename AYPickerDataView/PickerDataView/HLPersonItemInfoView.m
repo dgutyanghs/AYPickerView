@@ -20,12 +20,12 @@
         itemUnit.font = [UIFont systemFontOfSize:12.0];
         itemName.font = [UIFont systemFontOfSize:12.0];
         itemValue.font = [UIFont systemFontOfSize:20.0];
-        itemValue.textColor = [UIColor whiteColor];
+//        itemValue.textColor = [UIColor whiteColor];
         itemValue.textAlignment = NSTextAlignmentRight;
         
-        itemName.textColor = [UIColor colorWithWhite:1.0 alpha:0.6];
+//        itemName.textColor = [UIColor colorWithWhite:1.0 alpha:0.6];
         itemName.textAlignment = NSTextAlignmentRight;
-        itemUnit.textColor = [UIColor colorWithWhite:1.0 alpha:0.6];
+//        itemUnit.textColor = [UIColor colorWithWhite:1.0 alpha:0.6];
         itemUnit.textAlignment = NSTextAlignmentRight;
         
         [self addSubview:itemName];
@@ -60,7 +60,7 @@
     self.itemUnitLabel.frame = CGRectMake(containView.width - itemValueSize.width, itemY, itemValueSize.width, itemSize.height);
 }
 
-+(instancetype)viewWithFrame:(CGRect)frame itemName:(NSString *)name Unit:(NSString *)unit andValue:(NSNumber *)value
++(instancetype)viewWithFrame:(CGRect)frame itemName:(NSString *)name Unit:(NSString *)unit andValue:(NSNumber *)value andTextColor:(UIColor *)textColor
 {
     HLPersonItemInfoView *infoView = [[HLPersonItemInfoView alloc] initWithFrame:frame];
     infoView.itemNameLabel.text = name;
@@ -68,6 +68,9 @@
     infoView.itemUnitLabel.text = unit;
     infoView.itemValue = value;
     
+    infoView.itemValueLabel.textColor = textColor;
+    infoView.itemNameLabel.textColor = [textColor colorWithAlphaComponent:0.6];
+    infoView.itemUnitLabel.textColor =[textColor colorWithAlphaComponent:0.6];
     return infoView;
 }
 

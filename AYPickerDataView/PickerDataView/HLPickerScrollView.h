@@ -10,4 +10,9 @@
 
 @interface HLPickerScrollView : UIScrollView
 +(instancetype)viewWithFrame:(CGRect)frame valueDefault:(NSNumber *)value RangeFrom:(NSNumber *)min toMax:(NSNumber *)max ;
+
+/**
+ *  color for ruler. scale
+ */
+@property (nonatomic , strong) UIColor *scaleColor;
 @end

@@ -51,6 +51,8 @@
     CGFloat valueW = ScreenWidth - leftViewX - leftViewW  - 47/2 ;
     HLPickerScrollView *valueScrollView = [HLPickerScrollView viewWithFrame:CGRectMake(leftViewW, 0, valueW, leftViewH) valueDefault:defaultValue RangeFrom:min toMax:max];
     valueScrollView.backgroundColor = [UIColor whiteColor];
+    valueScrollView.layer.borderColor = [[UIColor greenColor] CGColor];
+    valueScrollView.layer.borderWidth = 3.0;
     
     NSInteger offsetX = ([defaultValue intValue] - 1 - centerDistance) * 10;
     cellView.defaultOffSetX = offsetX;
@@ -62,11 +64,22 @@
     cellView.valueScrollView = valueScrollView;
     
     //游标指示框
-    UIImageView *borderView = [[UIImageView alloc] initWithFrame:valueScrollView.frame];
-    [borderView setImage:[UIImage imageNamed:@"startpage_select_bg"]];
-    [cellView addSubview:borderView];
-    cellView.borderView = borderView;
+    CGFloat cursorW = 8.0;
+    CGFloat cursorH = 10.0;
+    CGFloat cursorDelta = 0.5;
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path moveToPoint:CGPointMake((valueScrollView.width - cursorW) /2 + valueScrollView.x, 0)];
+    [path addLineToPoint:CGPointMake((valueScrollView.width + cursorW) /2 + valueScrollView.x, 0)];
+    [path addLineToPoint:CGPointMake(valueScrollView.width / 2 + valueScrollView.x - cursorDelta, cursorH)];
+    [path closePath];
+    
+    CAShapeLayer *slayer = [[CAShapeLayer alloc] init];
+    slayer.fillColor = [UIColor greenColor].CGColor;
+    slayer.path = path.CGPath;
+    [cellView.layer addSublayer:slayer];
     
     return cellView;
 }
+
+
 @end

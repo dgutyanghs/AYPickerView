@@ -7,7 +7,6 @@
 //
 
 #import "HLPersonItemInfoView.h"
-//#import "UILabel+StringFrame.h"
 #import "const.h"
 
 @implementation HLPersonItemInfoView

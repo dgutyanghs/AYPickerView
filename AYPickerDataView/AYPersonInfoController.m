@@ -12,8 +12,8 @@
 
 @interface AYPersonInfoController () <UIScrollViewDelegate>
 @property (weak, nonatomic) HLPersonCellView *ageCellView;
-@property (weak, nonatomic) HLPersonCellView *weightCellView;
-@property (weak, nonatomic) HLPersonCellView *heightCellView;
+//@property (weak, nonatomic) HLPersonCellView *weightCellView;
+//@property (weak, nonatomic) HLPersonCellView *heightCellView;
 @end
 
 @implementation AYPersonInfoController
@@ -27,18 +27,10 @@
 
 -(void)initiaViewResource
 {
-    CGFloat systemPadding = 0;
-    
-    const CGFloat lineHeight = 1;
-
     self.view.backgroundColor = [UIColor colorWithRed:100/255.0 green:100/255.0 blue:214/255.0 alpha:1.0];
-    //seperate line
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, systemPadding, ScreenWidth, lineHeight)];
-    lineView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
-    [self.view addSubview:lineView];
     
     CGFloat ageSelectH = 137/2 ;
-    CGFloat ageSelectY = 76/2 + lineView.y + lineView.height;
+    CGFloat ageSelectY = 76/2 ;
     
     HLPersonCellView *ageCellView =  [self createAgeInfoView:CGRectMake(0, ageSelectH + ageSelectY + 84/2, ScreenWidth, 110/2)];
     [self.view addSubview:ageCellView];
@@ -51,7 +43,7 @@
  */
 -(HLPersonCellView *)createAgeInfoView:(CGRect)frame
 {
-    HLPersonCellView *cellView = [HLPersonCellView viewWithFrame:frame Name:@"年龄" unit:@"岁" valueRangeFromMin:@0 toMax:@100 defaultValue:@25 andOwner:self   type:HLPersonCellViewEnumAge];
+    HLPersonCellView *cellView = [HLPersonCellView viewWithFrame:frame Name:@"Age" unit:@"Year" valueRangeFromMin:@0 toMax:@100 defaultValue:@25 andOwner:self   type:HLPersonCellViewEnumAge];
     self.ageCellView.tag = HLPersonCellViewEnumAge;
     
     return cellView;

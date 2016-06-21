@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AYPersonInfoController.h
 //  AYPickerDataView
 //
 //  Created by AlexYang on 16/6/21.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface AYPersonInfoController : UIViewController
 
 @end
-

@@ -1,5 +1,5 @@
 //
-//  HLPersonInfoValueScrollView.m
+//  HLPickerScrollView.m
 //  SmartCoach
 //
 //  Created by AlexYang on 15/7/31.
@@ -42,10 +42,9 @@ static CGFloat sStartPoint = 11.0;
         sStartPoint = 11;
         NSLog(@"undefine iPhone screen");
     }
-    _scaleColor = [UIColor grayColor];
 }
 
-+(instancetype)viewWithFrame:(CGRect)frame valueDefault:(NSNumber *)value RangeFrom:(NSNumber *)min toMax:(NSNumber *)max
++(instancetype)viewWithFrame:(CGRect)frame valueDefault:(NSNumber *)value RangeFrom:(NSNumber *)min toMax:(NSNumber *)max andScaleColor:(UIColor *)scaleColor
 {
     const NSInteger unitPerPixel = 10;
     HLPickerScrollView *pickerScroll = [[HLPickerScrollView alloc] initWithFrame:frame];
@@ -59,7 +58,7 @@ static CGFloat sStartPoint = 11.0;
     pickerScroll.min = min;
     pickerScroll.contentInset = UIEdgeInsetsMake(0, (frame.size.width / 2) - sStartPoint, 0, frame.size.width/2 + sStartPoint + 2);
     
-    HLMeasureView *measureView = [HLMeasureView viewWithFrame:CGRectMake(0, 0, pickerScroll.contentSize.width, pickerScroll.frame.size.height) valueRangeFrom:min toMax:max andStartPosition:sStartPoint valueLabelColor:pickerScroll.scaleColor];
+    HLMeasureView *measureView = [HLMeasureView viewWithFrame:CGRectMake(0, 0, pickerScroll.contentSize.width, pickerScroll.frame.size.height) valueRangeFrom:min toMax:max andStartPosition:sStartPoint valueLabelColor:scaleColor];
     pickerScroll.measureView = measureView;
     [pickerScroll addSubview:measureView];
     

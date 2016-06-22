@@ -10,6 +10,6 @@
 #define AYPickerDataView_h
 
 #import "const.h"
-#import "HLPersonCellView.h"
+#import "HLPickerCellView.h"
 
 #endif /* AYPickerDataView_h */

@@ -1,5 +1,5 @@
 //
-//  HLPersonInfoValueScrollView.h
+//  HLPickerScrollView.h
 //  SmartCoach
 //
 //  Created by AlexYang on 15/7/31.
@@ -9,10 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HLPickerScrollView : UIScrollView
-+(instancetype)viewWithFrame:(CGRect)frame valueDefault:(NSNumber *)value RangeFrom:(NSNumber *)min toMax:(NSNumber *)max ;
+//+(instancetype)viewWithFrame:(CGRect)frame valueDefault:(NSNumber *)value RangeFrom:(NSNumber *)min toMax:(NSNumber *)max ;
 
-/**
- *  color for ruler. scale
- */
-@property (nonatomic , strong) UIColor *scaleColor;
++(instancetype)viewWithFrame:(CGRect)frame valueDefault:(NSNumber *)value RangeFrom:(NSNumber *)min toMax:(NSNumber *)max andScaleColor:(UIColor *)scaleColor;
 @end

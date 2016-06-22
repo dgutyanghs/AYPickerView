@@ -1,5 +1,5 @@
 //
-//  MeasureView.m
+//  HLMeasureView.m
 //  scrollViewDrawLine
 //
 //  Created by  BlueYang on 15/8/2.

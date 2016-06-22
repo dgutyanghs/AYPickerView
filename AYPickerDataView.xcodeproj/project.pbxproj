@@ -15,8 +15,8 @@
 		08079C5F1D192AE000D5F295 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08079C5D1D192AE000D5F295 /* LaunchScreen.storyboard */; };
 		08079C681D192BBC00D5F295 /* AYPersonInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08079C671D192BBC00D5F295 /* AYPersonInfoController.m */; };
 		08079C721D192D2100D5F295 /* HLMeasureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08079C6B1D192D2100D5F295 /* HLMeasureView.m */; };
-		08079C731D192D2100D5F295 /* HLPersonCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08079C6D1D192D2100D5F295 /* HLPersonCellView.m */; };
-		08079C741D192D2100D5F295 /* HLPersonItemInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08079C6F1D192D2100D5F295 /* HLPersonItemInfoView.m */; };
+		08079C731D192D2100D5F295 /* HLPickerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08079C6D1D192D2100D5F295 /* HLPickerCellView.m */; };
+		08079C741D192D2100D5F295 /* HLPickerResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08079C6F1D192D2100D5F295 /* HLPickerResultView.m */; };
 		08079C751D192D2100D5F295 /* HLPickerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08079C711D192D2100D5F295 /* HLPickerScrollView.m */; };
 /* End PBXBuildFile section */
 
@@ -38,10 +38,10 @@
 		08079C671D192BBC00D5F295 /* AYPersonInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYPersonInfoController.m; sourceTree = "<group>"; };
 		08079C6A1D192D2100D5F295 /* HLMeasureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLMeasureView.h; path = PickerDataView/HLMeasureView.h; sourceTree = "<group>"; };
 		08079C6B1D192D2100D5F295 /* HLMeasureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLMeasureView.m; path = PickerDataView/HLMeasureView.m; sourceTree = "<group>"; };
-		08079C6C1D192D2100D5F295 /* HLPersonCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLPersonCellView.h; path = PickerDataView/HLPersonCellView.h; sourceTree = "<group>"; };
-		08079C6D1D192D2100D5F295 /* HLPersonCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLPersonCellView.m; path = PickerDataView/HLPersonCellView.m; sourceTree = "<group>"; };
-		08079C6E1D192D2100D5F295 /* HLPersonItemInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLPersonItemInfoView.h; path = PickerDataView/HLPersonItemInfoView.h; sourceTree = "<group>"; };
-		08079C6F1D192D2100D5F295 /* HLPersonItemInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLPersonItemInfoView.m; path = PickerDataView/HLPersonItemInfoView.m; sourceTree = "<group>"; };
+		08079C6C1D192D2100D5F295 /* HLPickerCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLPickerCellView.h; path = PickerDataView/HLPickerCellView.h; sourceTree = "<group>"; };
+		08079C6D1D192D2100D5F295 /* HLPickerCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLPickerCellView.m; path = PickerDataView/HLPickerCellView.m; sourceTree = "<group>"; };
+		08079C6E1D192D2100D5F295 /* HLPickerResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLPickerResultView.h; path = PickerDataView/HLPickerResultView.h; sourceTree = "<group>"; };
+		08079C6F1D192D2100D5F295 /* HLPickerResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLPickerResultView.m; path = PickerDataView/HLPickerResultView.m; sourceTree = "<group>"; };
 		08079C701D192D2100D5F295 /* HLPickerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLPickerScrollView.h; path = PickerDataView/HLPickerScrollView.h; sourceTree = "<group>"; };
 		08079C711D192D2100D5F295 /* HLPickerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLPickerScrollView.m; path = PickerDataView/HLPickerScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,10 +115,10 @@
 				08024FD81D1A341C006201FA /* Extension */,
 				08079C6A1D192D2100D5F295 /* HLMeasureView.h */,
 				08079C6B1D192D2100D5F295 /* HLMeasureView.m */,
-				08079C6C1D192D2100D5F295 /* HLPersonCellView.h */,
-				08079C6D1D192D2100D5F295 /* HLPersonCellView.m */,
-				08079C6E1D192D2100D5F295 /* HLPersonItemInfoView.h */,
-				08079C6F1D192D2100D5F295 /* HLPersonItemInfoView.m */,
+				08079C6C1D192D2100D5F295 /* HLPickerCellView.h */,
+				08079C6D1D192D2100D5F295 /* HLPickerCellView.m */,
+				08079C6E1D192D2100D5F295 /* HLPickerResultView.h */,
+				08079C6F1D192D2100D5F295 /* HLPickerResultView.m */,
 				08079C701D192D2100D5F295 /* HLPickerScrollView.h */,
 				08079C711D192D2100D5F295 /* HLPickerScrollView.m */,
 				08024FDF1D1A3540006201FA /* AYPickerDataView.h */,
@@ -201,8 +201,8 @@
 				08079C751D192D2100D5F295 /* HLPickerScrollView.m in Sources */,
 				08024FDD1D1A342C006201FA /* UILabel+StringFrame.m in Sources */,
 				08079C511D192AE000D5F295 /* main.m in Sources */,
-				08079C731D192D2100D5F295 /* HLPersonCellView.m in Sources */,
-				08079C741D192D2100D5F295 /* HLPersonItemInfoView.m in Sources */,
+				08079C731D192D2100D5F295 /* HLPickerCellView.m in Sources */,
+				08079C741D192D2100D5F295 /* HLPickerResultView.m in Sources */,
 				08079C721D192D2100D5F295 /* HLMeasureView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

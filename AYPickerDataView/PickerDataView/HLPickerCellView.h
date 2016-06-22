@@ -1,5 +1,5 @@
 //
-//  HLPersonCellView.h
+//  HLPickerCellView.h
 //  SmartCoach
 //
 //  Created by AlexYang on 15/8/3.
@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger, HLPersonCellViewEnum) {
     HLPersonCellViewEnumHeight,
 };
 
-@interface HLPersonCellView : UIView
+@interface HLPickerCellView : UIView
 +(instancetype)viewWithFrame:(CGRect)frame Name:(NSString *)name unit:(NSString *)unitStr valueRangeFromMin:(NSNumber *)min toMax:(NSNumber *)max defaultValue:(NSNumber *)defaultValue andOwner:(id<UIScrollViewDelegate>)owner type:(HLPersonCellViewEnum)type;
 
 -(NSNumber *)updateLeftViewValue:(int16_t)contentOffsetX;

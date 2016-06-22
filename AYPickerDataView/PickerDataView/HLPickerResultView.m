@@ -1,15 +1,15 @@
 //
-//  HLPersonInfoView.m
+//  HLPickerResultView.m
 //  SmartCoach
 //
 //  Created by AlexYang on 15/7/31.
 //  Copyright (c) 2015年 SmartCoach. All rights reserved.
 //
 
-#import "HLPersonItemInfoView.h"
+#import "HLPickerResultView.h"
 #import "const.h"
 
-@implementation HLPersonItemInfoView
+@implementation HLPickerResultView
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
@@ -62,7 +62,7 @@
 
 +(instancetype)viewWithFrame:(CGRect)frame itemName:(NSString *)name Unit:(NSString *)unit andValue:(NSNumber *)value andTextColor:(UIColor *)textColor
 {
-    HLPersonItemInfoView *infoView = [[HLPersonItemInfoView alloc] initWithFrame:frame];
+    HLPickerResultView *infoView = [[HLPickerResultView alloc] initWithFrame:frame];
     infoView.itemNameLabel.text = name;
     infoView.itemValueLabel.text = [value stringValue];
     infoView.itemUnitLabel.text = unit;

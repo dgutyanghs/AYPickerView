@@ -1,19 +1,19 @@
 //
-//  HLPersonCellView.m
+//  HLPickerCellView.m
 //  SmartCoach
 //
 //  Created by AlexYang on 15/8/3.
 //  Copyright (c) 2015年 SmartCoach. All rights reserved.
 //
 
-#import "HLPersonCellView.h"
+#import "HLPickerCellView.h"
 #import "HLPickerScrollView.h"
-#import "HLPersonItemInfoView.h"
+#import "HLPickerResultView.h"
 #import "const.h"
 
-@interface HLPersonCellView ()
+@interface HLPickerCellView ()
 @property (weak, nonatomic) HLPickerScrollView *valueScrollView;
-@property (weak, nonatomic) HLPersonItemInfoView *leftView;
+@property (weak, nonatomic) HLPickerResultView *leftView;
 @property (weak, nonatomic) UIImageView *borderView;
 //@property (strong, nonatomic)NSNumber *defaultValue;
 @property (assign, nonatomic)CGFloat defaultOffSetX;
@@ -21,7 +21,7 @@
 @property (nonatomic , assign)id < UIScrollViewDelegate> owner;
 @end
 
-@implementation HLPersonCellView
+@implementation HLPickerCellView
 
 -(NSNumber *)updateLeftViewValue:(int16_t)contentOffsetX
 {
@@ -54,7 +54,7 @@
 
 +(instancetype)viewWithFrame:(CGRect)frame Name:(NSString *)name unit:(NSString *)unitStr valueRangeFromMin:(NSNumber *)min toMax:(NSNumber *)max defaultValue:(NSNumber *)defaultValue andOwner:(id<UIScrollViewDelegate>)owner type:(HLPersonCellViewEnum)type
 {
-    HLPersonCellView *cellView = [[HLPersonCellView alloc] initWithFrame:frame];
+    HLPickerCellView *cellView = [[HLPickerCellView alloc] initWithFrame:frame];
     cellView.name = name;
     cellView.unitStr = unitStr;
     cellView.min = min;
@@ -74,14 +74,13 @@
     CGFloat leftViewH = 110/2;
     CGFloat padding = 10;
     UInt16 centerDistance = 10;
-    HLPersonItemInfoView *leftView = [HLPersonItemInfoView viewWithFrame:CGRectMake(leftViewX, leftViewY, leftViewW- padding, leftViewH) itemName:_name Unit:_unitStr andValue:_defaultValue andTextColor:_resultTextColor];
+    HLPickerResultView *leftView = [HLPickerResultView viewWithFrame:CGRectMake(leftViewX, leftViewY, leftViewW- padding, leftViewH) itemName:_name Unit:_unitStr andValue:_defaultValue andTextColor:_resultTextColor];
     [self addSubview:leftView];
     self.leftView = leftView;
     
     //尺子scrollView
     CGFloat valueW = ScreenWidth - leftViewX - leftViewW  - 47/2 ;
-    HLPickerScrollView *valueScrollView = [HLPickerScrollView viewWithFrame:CGRectMake(leftViewW, 0, valueW, leftViewH) valueDefault:_defaultValue RangeFrom:_min toMax:_max];
-    valueScrollView.scaleColor = _scaleColor;
+    HLPickerScrollView *valueScrollView = [HLPickerScrollView viewWithFrame:CGRectMake(leftViewW, 0, valueW, leftViewH) valueDefault:_defaultValue RangeFrom:_min toMax:_max andScaleColor:_scaleColor];
     valueScrollView.backgroundColor = _scaleBackgroundColor;
     valueScrollView.layer.borderColor = [_scaleBorderColor CGColor];
     valueScrollView.layer.borderWidth = _scaleBorderWidth;

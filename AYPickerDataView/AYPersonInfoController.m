@@ -10,9 +10,9 @@
 #import "AYPickerDataView.h"
 
 @interface AYPersonInfoController () <UIScrollViewDelegate>
-@property (weak, nonatomic) HLPersonCellView *ageCellView;
+@property (weak, nonatomic) HLPickerCellView *ageCellView;
 //@property (weak, nonatomic) HLPersonCellView *weightCellView;
-@property (weak, nonatomic) HLPersonCellView *heightCellView;
+@property (weak, nonatomic) HLPickerCellView *heightCellView;
 @end
 
 @implementation AYPersonInfoController
@@ -31,26 +31,27 @@
     CGFloat ageSelectH = 137/2 ;
     CGFloat ageSelectY = 76/2 ;
     
-    HLPersonCellView *ageCellView =  [self createAgeInfoView:CGRectMake(0, ageSelectH + ageSelectY + 84/2, ScreenWidth, 110/2)];
+    HLPickerCellView *ageCellView =  [self createAgeInfoView:CGRectMake(0, ageSelectH + ageSelectY + 84/2, ScreenWidth, 110/2)];
     [self.view addSubview:ageCellView];
     self.ageCellView = ageCellView;
 
     
     CGFloat heightCellY = ageCellView.y  + ageCellView.height + 79/2;
-    HLPersonCellView * heightCellView = [self createHeightInfoView:CGRectMake(0, heightCellY, ScreenWidth, 110/2)];
+    HLPickerCellView * heightCellView = [self createHeightInfoView:CGRectMake(0, heightCellY, ScreenWidth, 110/2)];
     [self.view addSubview:heightCellView];
     self.heightCellView = heightCellView;
 }
 /**
  *  个人信息项 年龄
  */
--(HLPersonCellView *)createAgeInfoView:(CGRect)frame
+-(HLPickerCellView *)createAgeInfoView:(CGRect)frame
 {
-    HLPersonCellView *cellView = [HLPersonCellView viewWithFrame:frame Name:@"Age" unit:@"Year" valueRangeFromMin:@0 toMax:@100 defaultValue:@25 andOwner:self   type:HLPersonCellViewEnumAge];
+    HLPickerCellView *cellView = [HLPickerCellView viewWithFrame:frame Name:@"Age" unit:@"Year" valueRangeFromMin:@0 toMax:@100 defaultValue:@25 andOwner:self   type:HLPersonCellViewEnumAge];
     self.ageCellView.tag = HLPersonCellViewEnumAge;
     cellView.scaleBackgroundColor = [UIColor yellowColor];
     cellView.scaleColor = [UIColor blueColor];
     cellView.scaleBorderWidth = 3.0;
+    cellView.scaleBorderColor = [UIColor cyanColor];
     cellView.scaleCursorColor = [UIColor redColor];
     cellView.resultTextColor = [UIColor magentaColor];
     
@@ -61,9 +62,9 @@
 /**
  *  个人信息项 身高
  */
--(HLPersonCellView *)createHeightInfoView:(CGRect)frame
+-(HLPickerCellView *)createHeightInfoView:(CGRect)frame
 {
-    HLPersonCellView *cellView = [HLPersonCellView viewWithFrame:frame Name:@"身高" unit:@"cm" valueRangeFromMin:@0 toMax:@240 defaultValue:@172 andOwner:self type:HLPersonCellViewEnumHeight];
+    HLPickerCellView *cellView = [HLPickerCellView viewWithFrame:frame Name:@"身高" unit:@"cm" valueRangeFromMin:@0 toMax:@240 defaultValue:@172 andOwner:self type:HLPersonCellViewEnumHeight];
     self.heightCellView.tag = HLPersonCellViewEnumHeight;
     
     return cellView;

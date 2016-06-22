@@ -96,7 +96,15 @@
     //游标指示框
     CGFloat cursorW = 8.0;
     CGFloat cursorH = 10.0;
-    CGFloat cursorDelta = 0.5;
+    CGFloat cursorDelta = 0.0;
+    if (UI_IS_IPHONE5 || UI_IS_IPHONE6PLUS) {
+        cursorDelta = 0.5;
+    } else if (UI_IS_IPHONE6){
+        cursorDelta = 0.0;
+    }else {
+        cursorDelta = 0.0;
+    }
+    
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:CGPointMake((valueScrollView.width - cursorW) /2 + valueScrollView.x, 0)];
     [path addLineToPoint:CGPointMake((valueScrollView.width + cursorW) /2 + valueScrollView.x, 0)];

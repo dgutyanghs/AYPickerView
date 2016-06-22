@@ -23,7 +23,7 @@
 
 +(instancetype)viewWithFrame:(CGRect)frame valueRangeFrom:(NSNumber *)min toMax:(NSNumber *)max andStartPosition:(CGFloat)startPosition valueLabelColor:(UIColor *)color;
 {
-    CGRect viewFrame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width + startPosition, frame.size.height);
+    CGRect viewFrame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width + startPosition + 1, frame.size.height);
     HLMeasureView * measureView = [[HLMeasureView alloc] initWithFrame:viewFrame];
     measureView.startPosition = startPosition;
     measureView.labels = [NSMutableArray array];

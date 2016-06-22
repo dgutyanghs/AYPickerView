@@ -35,7 +35,7 @@ static CGFloat sStartPoint = 11.0;
     if (UI_IS_IPHONE5) {
         sStartPoint = 11;
     }else if (UI_IS_IPHONE6) {
-        sStartPoint = 38.5;
+        sStartPoint = 39;
     } else if (UI_IS_IPHONE6PLUS) {
         sStartPoint = 58;
     } else {

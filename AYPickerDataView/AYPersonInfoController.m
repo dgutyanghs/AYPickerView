@@ -7,13 +7,12 @@
 //
 
 #import "AYPersonInfoController.h"
-#import "HLPersonCellView.h"
-#import "const.h"
+#import "AYPickerDataView.h"
 
 @interface AYPersonInfoController () <UIScrollViewDelegate>
 @property (weak, nonatomic) HLPersonCellView *ageCellView;
 //@property (weak, nonatomic) HLPersonCellView *weightCellView;
-//@property (weak, nonatomic) HLPersonCellView *heightCellView;
+@property (weak, nonatomic) HLPersonCellView *heightCellView;
 @end
 
 @implementation AYPersonInfoController
@@ -37,6 +36,10 @@
     self.ageCellView = ageCellView;
 
     
+    CGFloat heightCellY = ageCellView.y  + ageCellView.height + 79/2;
+    HLPersonCellView * heightCellView = [self createHeightInfoView:CGRectMake(0, heightCellY, ScreenWidth, 110/2)];
+    [self.view addSubview:heightCellView];
+    self.heightCellView = heightCellView;
 }
 /**
  *  个人信息项 年龄
@@ -47,9 +50,21 @@
     self.ageCellView.tag = HLPersonCellViewEnumAge;
     cellView.scaleBackgroundColor = [UIColor yellowColor];
     cellView.scaleColor = [UIColor blueColor];
-    cellView.scaleBorderWidth = 5.0;
+    cellView.scaleBorderWidth = 3.0;
     cellView.scaleCursorColor = [UIColor redColor];
     cellView.resultTextColor = [UIColor magentaColor];
+    
+    return cellView;
+}
+
+
+/**
+ *  个人信息项 身高
+ */
+-(HLPersonCellView *)createHeightInfoView:(CGRect)frame
+{
+    HLPersonCellView *cellView = [HLPersonCellView viewWithFrame:frame Name:@"身高" unit:@"cm" valueRangeFromMin:@0 toMax:@240 defaultValue:@172 andOwner:self type:HLPersonCellViewEnumHeight];
+    self.heightCellView.tag = HLPersonCellViewEnumHeight;
     
     return cellView;
 }
@@ -63,9 +78,9 @@
         case HLPersonCellViewEnumAge:
             [self.ageCellView updateLeftViewValue:scrollView.contentOffset.x];
             break;
-//        case HLPersonCellViewEnumHeight:
-//            [self.heightCellView updateLeftViewValue:scrollView.contentOffset.x];
-//            break;
+        case HLPersonCellViewEnumHeight:
+            [self.heightCellView updateLeftViewValue:scrollView.contentOffset.x];
+            break;
 //        case HLPersonCellViewEnumWeight:
 //            [self.weightCellView updateLeftViewValue:scrollView.contentOffset.x];
 //            break;

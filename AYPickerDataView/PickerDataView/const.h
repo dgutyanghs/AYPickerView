@@ -9,7 +9,6 @@
 #ifndef const_h
 #define const_h
 
-//#import "UIColor+Help.h"
 #import "UILabel+StringFrame.h"
 #import "UIView+Extension.h"
 

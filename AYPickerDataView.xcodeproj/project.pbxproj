@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08024FDD1D1A342C006201FA /* UILabel+StringFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 08024FDA1D1A342C006201FA /* UILabel+StringFrame.m */; };
+		08024FDE1D1A342C006201FA /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 08024FDC1D1A342C006201FA /* UIView+Extension.m */; };
 		08079C511D192AE000D5F295 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08079C501D192AE000D5F295 /* main.m */; };
 		08079C541D192AE000D5F295 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08079C531D192AE000D5F295 /* AppDelegate.m */; };
 		08079C5C1D192AE000D5F295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08079C5B1D192AE000D5F295 /* Assets.xcassets */; };
@@ -16,11 +18,15 @@
 		08079C731D192D2100D5F295 /* HLPersonCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08079C6D1D192D2100D5F295 /* HLPersonCellView.m */; };
 		08079C741D192D2100D5F295 /* HLPersonItemInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08079C6F1D192D2100D5F295 /* HLPersonItemInfoView.m */; };
 		08079C751D192D2100D5F295 /* HLPickerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08079C711D192D2100D5F295 /* HLPickerScrollView.m */; };
-		08079C7F1D192EA800D5F295 /* UILabel+StringFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 08079C7C1D192EA800D5F295 /* UILabel+StringFrame.m */; };
-		08079C801D192EA800D5F295 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 08079C7E1D192EA800D5F295 /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08024FD71D1A3412006201FA /* const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = const.h; path = PickerDataView/const.h; sourceTree = "<group>"; };
+		08024FD91D1A342C006201FA /* UILabel+StringFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+StringFrame.h"; path = "PickerDataView/Extension/UILabel+StringFrame.h"; sourceTree = "<group>"; };
+		08024FDA1D1A342C006201FA /* UILabel+StringFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+StringFrame.m"; path = "PickerDataView/Extension/UILabel+StringFrame.m"; sourceTree = "<group>"; };
+		08024FDB1D1A342C006201FA /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Extension.h"; path = "PickerDataView/Extension/UIView+Extension.h"; sourceTree = "<group>"; };
+		08024FDC1D1A342C006201FA /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Extension.m"; path = "PickerDataView/Extension/UIView+Extension.m"; sourceTree = "<group>"; };
+		08024FDF1D1A3540006201FA /* AYPickerDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AYPickerDataView.h; sourceTree = "<group>"; };
 		08079C4C1D192AE000D5F295 /* AYPickerDataView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AYPickerDataView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08079C501D192AE000D5F295 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		08079C521D192AE000D5F295 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -38,11 +44,6 @@
 		08079C6F1D192D2100D5F295 /* HLPersonItemInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLPersonItemInfoView.m; path = PickerDataView/HLPersonItemInfoView.m; sourceTree = "<group>"; };
 		08079C701D192D2100D5F295 /* HLPickerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLPickerScrollView.h; path = PickerDataView/HLPickerScrollView.h; sourceTree = "<group>"; };
 		08079C711D192D2100D5F295 /* HLPickerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLPickerScrollView.m; path = PickerDataView/HLPickerScrollView.m; sourceTree = "<group>"; };
-		08079C761D192D5200D5F295 /* const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = const.h; sourceTree = "<group>"; };
-		08079C7B1D192EA800D5F295 /* UILabel+StringFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+StringFrame.h"; path = "Extension/UILabel+StringFrame.h"; sourceTree = "<group>"; };
-		08079C7C1D192EA800D5F295 /* UILabel+StringFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+StringFrame.m"; path = "Extension/UILabel+StringFrame.m"; sourceTree = "<group>"; };
-		08079C7D1D192EA800D5F295 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Extension.h"; path = "Extension/UIView+Extension.h"; sourceTree = "<group>"; };
-		08079C7E1D192EA800D5F295 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Extension.m"; path = "Extension/UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08024FD81D1A341C006201FA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				08024FD71D1A3412006201FA /* const.h */,
+				08024FD91D1A342C006201FA /* UILabel+StringFrame.h */,
+				08024FDA1D1A342C006201FA /* UILabel+StringFrame.m */,
+				08024FDB1D1A342C006201FA /* UIView+Extension.h */,
+				08024FDC1D1A342C006201FA /* UIView+Extension.m */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		08079C431D192AE000D5F295 = {
 			isa = PBXGroup;
 			children = (
@@ -75,7 +88,6 @@
 		08079C4E1D192AE000D5F295 /* AYPickerDataView */ = {
 			isa = PBXGroup;
 			children = (
-				08079C7A1D192E9200D5F295 /* Extension */,
 				08079C691D192C3900D5F295 /* PickerDataView */,
 				08079C521D192AE000D5F295 /* AppDelegate.h */,
 				08079C531D192AE000D5F295 /* AppDelegate.m */,
@@ -84,7 +96,6 @@
 				08079C5B1D192AE000D5F295 /* Assets.xcassets */,
 				08079C5D1D192AE000D5F295 /* LaunchScreen.storyboard */,
 				08079C601D192AE000D5F295 /* Info.plist */,
-				08079C761D192D5200D5F295 /* const.h */,
 				08079C4F1D192AE000D5F295 /* Supporting Files */,
 			);
 			path = AYPickerDataView;
@@ -101,6 +112,7 @@
 		08079C691D192C3900D5F295 /* PickerDataView */ = {
 			isa = PBXGroup;
 			children = (
+				08024FD81D1A341C006201FA /* Extension */,
 				08079C6A1D192D2100D5F295 /* HLMeasureView.h */,
 				08079C6B1D192D2100D5F295 /* HLMeasureView.m */,
 				08079C6C1D192D2100D5F295 /* HLPersonCellView.h */,
@@ -109,19 +121,9 @@
 				08079C6F1D192D2100D5F295 /* HLPersonItemInfoView.m */,
 				08079C701D192D2100D5F295 /* HLPickerScrollView.h */,
 				08079C711D192D2100D5F295 /* HLPickerScrollView.m */,
+				08024FDF1D1A3540006201FA /* AYPickerDataView.h */,
 			);
 			name = PickerDataView;
-			sourceTree = "<group>";
-		};
-		08079C7A1D192E9200D5F295 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				08079C7B1D192EA800D5F295 /* UILabel+StringFrame.h */,
-				08079C7C1D192EA800D5F295 /* UILabel+StringFrame.m */,
-				08079C7D1D192EA800D5F295 /* UIView+Extension.h */,
-				08079C7E1D192EA800D5F295 /* UIView+Extension.m */,
-			);
-			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,11 +195,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08079C801D192EA800D5F295 /* UIView+Extension.m in Sources */,
-				08079C7F1D192EA800D5F295 /* UILabel+StringFrame.m in Sources */,
+				08024FDE1D1A342C006201FA /* UIView+Extension.m in Sources */,
 				08079C541D192AE000D5F295 /* AppDelegate.m in Sources */,
 				08079C681D192BBC00D5F295 /* AYPersonInfoController.m in Sources */,
 				08079C751D192D2100D5F295 /* HLPickerScrollView.m in Sources */,
+				08024FDD1D1A342C006201FA /* UILabel+StringFrame.m in Sources */,
 				08079C511D192AE000D5F295 /* main.m in Sources */,
 				08079C731D192D2100D5F295 /* HLPersonCellView.m in Sources */,
 				08079C741D192D2100D5F295 /* HLPersonItemInfoView.m in Sources */,
@@ -344,6 +346,7 @@
 				08079C651D192AE000D5F295 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

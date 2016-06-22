@@ -9,12 +9,15 @@
 #import "HLPickerScrollView.h"
 #import "HLMeasureView.h"
 #import "const.h"
+/**
+ *  measureView start to draw ruler position
+ */
+static CGFloat sStartPoint = 11.0;
 
 @interface HLPickerScrollView ()
 @property (nonatomic, weak) HLMeasureView *measureView;
 @property (nonatomic , strong) NSNumber *max;
 @property (nonatomic , strong) NSNumber *min;
-@property (nonatomic , assign) CGFloat startPoint;
 @end
 
 @implementation HLPickerScrollView
@@ -30,13 +33,13 @@
 -(void)setDefaultParameters {
     
     if (UI_IS_IPHONE5) {
-        _startPoint = 11;
+        sStartPoint = 11;
     }else if (UI_IS_IPHONE6) {
-        _startPoint = 38.5;
+        sStartPoint = 38.5;
     } else if (UI_IS_IPHONE6PLUS) {
-        _startPoint = 58;
+        sStartPoint = 58;
     } else {
-        _startPoint = 11;
+        sStartPoint = 11;
         NSLog(@"undefine iPhone screen");
     }
     _scaleColor = [UIColor grayColor];
@@ -54,20 +57,24 @@
     pickerScroll.showsHorizontalScrollIndicator = NO;
     pickerScroll.max = max;
     pickerScroll.min = min;
+    pickerScroll.contentInset = UIEdgeInsetsMake(0, (frame.size.width / 2) - sStartPoint, 0, frame.size.width/2 + sStartPoint + 2);
+    
+    HLMeasureView *measureView = [HLMeasureView viewWithFrame:CGRectMake(0, 0, pickerScroll.contentSize.width, pickerScroll.frame.size.height) valueRangeFrom:min toMax:max andStartPosition:sStartPoint valueLabelColor:pickerScroll.scaleColor];
+    pickerScroll.measureView = measureView;
+    [pickerScroll addSubview:measureView];
     
     return pickerScroll;
 }
 
 
--(void)layoutSubviews {
-    [super layoutSubviews];
-    
-
-    self.contentInset = UIEdgeInsetsMake(0, (self.frame.size.width / 2) - _startPoint, 0, self.frame.size.width/2 + _startPoint + 2);
-    
-    HLMeasureView *measureView = [HLMeasureView viewWithFrame:CGRectMake(0, 0, self.contentSize.width, self.frame.size.height) valueRangeFrom:_min toMax:_max andStartPosition:_startPoint valueLabelColor:_scaleColor];
-    self.measureView = measureView;
-    [self addSubview:measureView];
-}
+//-(void)layoutSubviews {
+//    [super layoutSubviews];
+//
+//    self.contentInset = UIEdgeInsetsMake(0, (self.frame.size.width / 2) - _startPoint, 0, self.frame.size.width/2 + _startPoint + 2);
+//    
+//    HLMeasureView *measureView = [HLMeasureView viewWithFrame:CGRectMake(0, 0, self.contentSize.width, self.frame.size.height) valueRangeFrom:_min toMax:_max andStartPosition:_startPoint valueLabelColor:_scaleColor];
+//    self.measureView = measureView;
+//    [self addSubview:measureView];
+//}
 
 @end

@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HLMeasureView : UIView
-+(instancetype)viewWithFrame:(CGRect)frame valueRangeFrom:(NSNumber *)min toMax:(NSNumber *)max andStartPosition:(CGFloat)startPosition;
 +(instancetype)viewWithFrame:(CGRect)frame valueRangeFrom:(NSNumber *)min toMax:(NSNumber *)max andStartPosition:(CGFloat)startPosition valueLabelColor:(UIColor *)color;
 @end

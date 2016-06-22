@@ -90,7 +90,6 @@
     // 设置绘图状态
     // 设置线宽
     CGContextSetLineWidth(ctx, 1);
-//    [[UIColor grayColor] set];
     [self.valueColor set];
     
     // 4.渲染上下文到视图

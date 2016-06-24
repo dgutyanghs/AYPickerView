@@ -93,6 +93,8 @@
     [self addSubview:valueScrollView];
     self.valueScrollView = valueScrollView;
     
+    [self addGradientLayer:valueScrollView.frame];
+    
     //游标指示框
     CGFloat cursorW = 8.0;
     CGFloat cursorH = 10.0;
@@ -115,6 +117,18 @@
     slayer.fillColor = _scaleCursorColor.CGColor;
     slayer.path = path.CGPath;
     [self.layer addSublayer:slayer];
+}
+
+-(void)addGradientLayer:(CGRect)frame {
+    CAGradientLayer *gLayer = [[CAGradientLayer alloc] init];
+    gLayer.frame = frame;
+    gLayer.colors = @[(__bridge id)[UIColor colorWithWhite:0.0 alpha:0.8].CGColor, (__bridge id)[UIColor colorWithWhite:0.0 alpha:0.0].CGColor,
+                      (__bridge id)[UIColor colorWithWhite:0.0 alpha:0.8].CGColor];
+    gLayer.locations = @[@0.0, @0.5, @1.0];
+    gLayer.startPoint = CGPointMake(0, 0.5);
+    gLayer.endPoint  =  CGPointMake(1, 0.5);
+    
+    [self.layer addSublayer:gLayer];
 }
 
 @end

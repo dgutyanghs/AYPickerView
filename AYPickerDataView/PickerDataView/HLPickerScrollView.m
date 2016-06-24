@@ -62,18 +62,21 @@ static CGFloat sStartPoint = 11.0;
     pickerScroll.measureView = measureView;
     [pickerScroll addSubview:measureView];
     
+//    [pickerScroll addGradientLayer:pickerScroll.bounds];
     return pickerScroll;
 }
 
-
-//-(void)layoutSubviews {
-//    [super layoutSubviews];
-//
-//    self.contentInset = UIEdgeInsetsMake(0, (self.frame.size.width / 2) - _startPoint, 0, self.frame.size.width/2 + _startPoint + 2);
+//-(void)addGradientLayer:(CGRect)frame {
+//    CAGradientLayer *gLayer = [[CAGradientLayer alloc] init];
+//    gLayer.frame = self.bounds;
+//    gLayer.colors = @[(__bridge id)[UIColor colorWithWhite:0.0 alpha:0.8].CGColor, (__bridge id)[UIColor colorWithWhite:0.0 alpha:0.0].CGColor,
+//                      (__bridge id)[UIColor colorWithWhite:0.0 alpha:0.8].CGColor];
+//    gLayer.locations = @[@0.0, @0.5, @1.0];
+//    gLayer.startPoint = CGPointMake(0, 0.5);
+//    gLayer.endPoint  =  CGPointMake(1, 0.5);
 //    
-//    HLMeasureView *measureView = [HLMeasureView viewWithFrame:CGRectMake(0, 0, self.contentSize.width, self.frame.size.height) valueRangeFrom:_min toMax:_max andStartPosition:_startPoint valueLabelColor:_scaleColor];
-//    self.measureView = measureView;
-//    [self addSubview:measureView];
+//    [self.layer addSublayer:gLayer];
 //}
+
 
 @end

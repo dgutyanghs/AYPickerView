@@ -20,12 +20,8 @@
         itemUnit.font = [UIFont systemFontOfSize:12.0];
         itemName.font = [UIFont systemFontOfSize:12.0];
         itemValue.font = [UIFont systemFontOfSize:20.0];
-//        itemValue.textColor = [UIColor whiteColor];
         itemValue.textAlignment = NSTextAlignmentRight;
-        
-//        itemName.textColor = [UIColor colorWithWhite:1.0 alpha:0.6];
         itemName.textAlignment = NSTextAlignmentRight;
-//        itemUnit.textColor = [UIColor colorWithWhite:1.0 alpha:0.6];
         itemUnit.textAlignment = NSTextAlignmentRight;
         
         [self addSubview:itemName];

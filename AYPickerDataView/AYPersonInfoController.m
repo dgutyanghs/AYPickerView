@@ -48,7 +48,7 @@
 {
     HLPickerCellView *cellView = [HLPickerCellView viewWithFrame:frame Name:@"Age" unit:@"Year" valueRangeFromMin:@0 toMax:@100 defaultValue:@25 andOwner:self   type:HLPersonCellViewEnumAge];
     self.ageCellView.tag = HLPersonCellViewEnumAge;
-    cellView.scaleBackgroundColor = [UIColor yellowColor];
+    cellView.scaleBackgroundColor = [UIColor blackColor];
     cellView.scaleColor = [UIColor blueColor];
     cellView.scaleBorderWidth = 3.0;
     cellView.scaleBorderColor = [UIColor cyanColor];

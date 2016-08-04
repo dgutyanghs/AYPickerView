@@ -7,7 +7,7 @@
 ###Screenshots
 ---
 <img src="Screenshots/AYPickerViewShot1.png"" width="320px" />
-
+<img src="Screenshots/AYPickerViewShot2.png"" width="320px" />
 
 ###How to use
 ###如何使用
@@ -22,8 +22,16 @@
     cellView.scaleBorderWidth = 3.0;
     cellView.scaleCursorColor = [UIColor redColor];
     cellView.resultTextColor = [UIColor magentaColor];
+    
+    // add a gradient effect for the ruler
+    cellView.gradientEnable = YES;
+    cellView.gradientColorCenter = [UIColor colorWithWhite:0 alpha:0];
+    cellView.gradientColorCorner = [UIColor colorWithWhite:0 alpha:0.8];
         
 ### happy hacking, enjoy!
+
+#### 更新
+##### 添加一个渐变layer， 使滚动栏具有立体感。
  
  
     

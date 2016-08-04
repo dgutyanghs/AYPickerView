@@ -41,7 +41,9 @@
     _scaleCursorColor = _scaleBorderColor;
     _scaleBorderWidth = 3.0;
     _resultTextColor  = [UIColor whiteColor];
-    
+    _gradientEnable    = NO;
+    _gradientColorCenter = [UIColor colorWithWhite:0.0 alpha:0.8];
+    _gradientColorCorner = [UIColor colorWithWhite:0.0 alpha:0.0];
 }
 
 -(instancetype)initWithFrame:(CGRect)frame {
@@ -93,7 +95,9 @@
     [self addSubview:valueScrollView];
     self.valueScrollView = valueScrollView;
     
-    [self addGradientLayer:valueScrollView.frame];
+    if (_gradientEnable) {
+        [self addGradientLayer:valueScrollView.frame];
+    }
     
     //游标指示框
     CGFloat cursorW = 8.0;
@@ -122,8 +126,9 @@
 -(void)addGradientLayer:(CGRect)frame {
     CAGradientLayer *gLayer = [[CAGradientLayer alloc] init];
     gLayer.frame = frame;
-    gLayer.colors = @[(__bridge id)[UIColor colorWithWhite:0.0 alpha:0.8].CGColor, (__bridge id)[UIColor colorWithWhite:0.0 alpha:0.0].CGColor,
-                      (__bridge id)[UIColor colorWithWhite:0.0 alpha:0.8].CGColor];
+    gLayer.colors = @[(__bridge id)_gradientColorCorner.CGColor,
+                      (__bridge id)_gradientColorCenter.CGColor,
+                      (__bridge id)_gradientColorCorner.CGColor];
     gLayer.locations = @[@0.0, @0.5, @1.0];
     gLayer.startPoint = CGPointMake(0, 0.5);
     gLayer.endPoint  =  CGPointMake(1, 0.5);

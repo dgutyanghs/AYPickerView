@@ -37,4 +37,13 @@ typedef NS_ENUM(NSInteger, HLPersonCellViewEnum) {
 @property (nonatomic , assign) CGFloat scaleBorderWidth;
 @property (nonatomic , strong) UIColor *scaleCursorColor;
 @property (nonatomic , strong) UIColor *resultTextColor;
+
+/**
+ *  GradientLayer for ruler
+ */
+@property (nonatomic, assign, getter=isGradientEnable) BOOL gradientEnable;
+@property (nonatomic, strong) UIColor *gradientColorCenter;
+@property (nonatomic, strong) UIColor *gradientColorCorner;
+
+
 @end

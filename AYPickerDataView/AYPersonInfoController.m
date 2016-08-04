@@ -55,6 +55,11 @@
     cellView.scaleCursorColor = [UIColor redColor];
     cellView.resultTextColor = [UIColor magentaColor];
     
+    // add a gradient effect for the ruler
+    cellView.gradientEnable = YES;
+    cellView.gradientColorCenter = [UIColor colorWithWhite:0 alpha:0];
+    cellView.gradientColorCorner = [UIColor colorWithWhite:0 alpha:0.8];
+    
     return cellView;
 }
 

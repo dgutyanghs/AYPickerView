@@ -2,8 +2,11 @@
 ** A pickerView library for iOS 滚动选择条 
 
 ** Screenshots
-<img src="Screenshots/AYPickerViewShot1.png"" width="320px" />
-<img src="Screenshots/AYPickerViewShot2.png"" width="320px" />
+---
+#+BEGIN_EXAMPLE
+<img src="Screenshots/AYPickerViewShot1.png" width="320px" />&nbsp;
+<img src="Screenshots/AYPickerViewShot2.png" width="320px" />
+#+END_EXAMPLE
 
 ** How to use
 ** 如何使用

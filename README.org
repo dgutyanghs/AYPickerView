@@ -1,0 +1,31 @@
+* AYPickerDataView
+** A pickerView library for iOS 滚动选择条 
+
+** Screenshots
+<img src="Screenshots/AYPickerViewShot1.png"" width="320px" />
+<img src="Screenshots/AYPickerViewShot2.png"" width="320px" />
+
+** How to use
+** 如何使用
+#+BEGIN_EXAMPLE
+ #import "AYPickerDataView.h"
+
+    
+    HLPickerCellView *cellView = [HLPickerCellView viewWithFrame:frame Name:@"Age" unit:@"Year" valueRangeFromMin:@0 toMax:@100 defaultValue:@25 andOwner:self   type:HLPersonCellViewEnumAge];
+    
+	cellView.scaleBackgroundColor = [UIColor yellowColor];
+    cellView.scaleColor = [UIColor blueColor];
+    cellView.scaleBorderWidth = 3.0;
+    cellView.scaleCursorColor = [UIColor redColor];
+    cellView.resultTextColor = [UIColor magentaColor];
+    
+    // add a gradient effect for the ruler
+    cellView.gradientEnable = YES;
+    cellView.gradientColorCenter = [UIColor colorWithWhite:0 alpha:0];
+    cellView.gradientColorCorner = [UIColor colorWithWhite:0 alpha:0.8];
+#+END_EXAMPLE
+        
+
+** 更新
+   添加一个渐变layer， 使滚动栏具有立体感。
+** happy hacking, enjoy!

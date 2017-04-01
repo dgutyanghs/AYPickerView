@@ -2,46 +2,46 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org42c2dae">1. AYPickerDataView</a>
+<li><a href="#org00869fb">1. AYPickerDataView</a>
 <ul>
-<li><a href="#orgb32b84d">1.1. A pickerView library for iOS 滚动选择条</a></li>
-<li><a href="#org46dae34">1.2. Screenshots</a></li>
-<li><a href="#org0d21501">1.3. How to use</a></li>
-<li><a href="#org58c3375">1.4. 如何使用</a></li>
-<li><a href="#orgf1aaac8">1.5. 更新</a></li>
-<li><a href="#org6003c4b">1.6. happy hacking, enjoy!</a></li>
+<li><a href="#org2d23d2d">1.1. A pickerView library for iOS 滚动选择条</a></li>
+<li><a href="#orga6b8356">1.2. Screenshots</a></li>
+<li><a href="#orgdb8987c">1.3. How to use</a></li>
+<li><a href="#org443837e">1.4. 如何使用</a></li>
+<li><a href="#orged0a023">1.5. 更新</a></li>
+<li><a href="#org6cf3513">1.6. happy hacking, enjoy!</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<a id="org42c2dae"></a>
+<a id="org00869fb"></a>
 
 # AYPickerDataView
 
 
-<a id="orgb32b84d"></a>
+<a id="org2d23d2d"></a>
 
 ## A pickerView library for iOS 滚动选择条
 
 
-<a id="org46dae34"></a>
+<a id="orga6b8356"></a>
 
 ## Screenshots
 
-&#x2014;
+---
 
-    <img src="Screenshots/AYPickerViewShot1.png" width="320px" />&nbsp;
-    <img src="Screenshots/AYPickerViewShot2.png" width="320px" />
+<img src="Screenshots/AYPickerViewShot1.png" width="320px" />&nbsp;
+<img src="Screenshots/AYPickerViewShot2.png" width="320px" />
 
 
-<a id="org0d21501"></a>
+<a id="orgdb8987c"></a>
 
 ## How to use
 
 
-<a id="org58c3375"></a>
+<a id="org443837e"></a>
 
 ## 如何使用
 
@@ -62,14 +62,14 @@
        cellView.gradientColorCorner = [UIColor colorWithWhite:0 alpha:0.8];
 
 
-<a id="orgf1aaac8"></a>
+<a id="orged0a023"></a>
 
 ## 更新
 
 添加一个渐变layer， 使滚动栏具有立体感。
 
 
-<a id="org6003c4b"></a>
+<a id="org6cf3513"></a>
 
 ## happy hacking, enjoy!
 
